@@ -78,7 +78,7 @@ public class C3POChatTest extends AbstractBotTest {
 		        .interaction(Interaction.builder()
 		        .name("choosing a person")
 		        .action("theForce")
-		        .userSays(Arrays.asList("I would like to be a @persons:persons."))
+		        .userSays(Arrays.asList("I would like to be a {{persons:persons}}."))
 		        .entities(Arrays.asList(Entity.builder()
 		                      .name("persons")
 		                      .entries(Arrays.asList(
@@ -91,7 +91,7 @@ public class C3POChatTest extends AbstractBotTest {
 						      .parameters(Arrays.asList(
 						                    Parameter.builder()
 						                         .alias("persons")
-						                         .entity("@persons")
+						                         .entity("persons")
 						                         .prompts(Arrays.asList("Which person are you interested in?"))
 						                    .build()))
 						      .responses(Arrays.asList(ResponseInteraction.builder()

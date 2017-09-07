@@ -148,7 +148,7 @@ public class BotTest extends AbstractBotTest {
 	 */
 	@Override
 	public void createMessages() {
-		okResponses = Arrays.asList("Your reservation on $movies has been confirmed");
+		okResponses = Arrays.asList("Your reservation on {{movies}} has been confirmed");
 		fallbackResponses = Arrays.asList(
 								"I do not understand, could you repeat?", 
 								"Please repeat", 
@@ -177,11 +177,11 @@ public class BotTest extends AbstractBotTest {
 		return Interaction.builder()
 			.name("choosing movies")
 			.action("helloMovies")
-			.userSays(Arrays.asList("the would be great to see @movies:movies", "I would like to go to @movies:movies", "@movies:movies"))
+			.userSays(Arrays.asList("the would be great to see {{movies:movies}}", "I would like to go to {{movies:movies}}", "{{movies:movies}}"))
 			.parameters(Arrays.asList(
 					Parameter.builder()
 						.alias("movies")
-						.entity("@movies")
+						.entity("movies")
 						.prompts(Arrays.asList("Which movie are you interested in?"))
 						.build()))
 			.responses(Arrays.asList(ResponseInteraction.builder()
